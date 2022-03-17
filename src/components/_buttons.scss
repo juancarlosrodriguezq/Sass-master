@@ -1,0 +1,105 @@
+//mixin trabaja con include.
+@mixin setButton($color){
+    border-color: $color;
+    transition: all 250ms ease-in-out;    
+
+    &:hover{            
+        background-color: $color;
+        color: $light;
+    }
+}
+
+.btn{
+    text-decoration: none;    
+    padding: 5px;
+    margin: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    margin-top: 10px;
+
+    &:hover{
+        border-width: 0px;
+    }
+
+    &-#{$primaryLabel}{
+        @include setButton($primary);
+    }
+
+    &-#{$warningLabel}{
+        @include setButton($warning);
+    }
+    &-#{$dangerLabel}{
+        @include setButton($danger);
+    }
+    &-#{$successLabel}{
+        @include setButton($success);
+    }
+    &-#{$infoLabel}{
+        @include setButton($info);
+    }
+    
+    /*
+    & &-#{$primaryLabel}{
+        @include setButton($primary);
+    }
+    & &-warning{
+        @include setButton($warning);
+    }
+    & &-danger{
+        @include setButton($danger);
+    }
+    & &-sucess{
+        @include setButton($sucess);
+    }
+    & &-info{
+        @include setButton($info);
+    }
+    */
+    //Definiendo los estilos de clases segun la tonalidad  de colores.
+    /*
+    & &-primary{
+        border-color: $primary;
+
+        &:hover{            
+            background-color: $primary;
+            color: $primary;
+        }
+    }
+
+    & &-warning{
+        border-color: $warning;
+        &:hover{            
+            background-color: $warning;
+            color: $warning;
+        }
+    }      
+
+    & &-danger{
+        border-color: $danger;
+        &:hover{            
+            background-color: $danger;
+            color: $danger;
+        }
+    }
+    
+    & &-sucess{
+        border-color: $sucess;
+        &:hover{            
+            background-color: $sucess;
+            color: $sucess;
+        }
+    }
+    
+    & &-info{
+        border-color: $info;
+        &:hover{            
+            background-color: $info;
+            color: $info;
+        }
+    }
+    */
+}
+
+

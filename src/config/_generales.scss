@@ -1,0 +1,11 @@
+
+@mixin setFlex ($dir, $aligX){
+    display: flex;
+    flex-direction: $dir;
+
+    @if $dir == row  {
+        justify-content: $aligX;
+    } @else {
+        align-content: $aligX;
+    }    
+}
